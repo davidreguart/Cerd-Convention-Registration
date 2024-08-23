@@ -1,0 +1,79 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-registro {
+    background-color: v.$brown;
+
+    h1 {
+        color: v.$white;
+        font-weight: 700;
+    }
+
+    .registro {
+        @include m.contenedor;
+        @include m.tablet {
+            width: 40%;
+        }
+    }
+}
+
+.formulario-registro {
+    @include m.resetear-lista;
+    @include m.contenedor;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 1.4rem;
+
+    
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+
+        label{
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        input, textarea {
+            background-color: transparent; 
+            border: none;
+            border-bottom: 1px solid v.$blue;
+            color: v.$blue;
+            font-size: 1.3rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            padding: 1rem 0;
+            font-size: larger;
+        }
+    }
+}
+
+.registro-footer {
+    @include m.contenedor;
+    width: fit-content;
+    margin-top: 2rem;
+
+    button {
+        cursor: pointer;
+        width: 10rem;
+        height: 4rem;
+        background-color: v.$gray;
+        border: none;
+        border-radius: 1.1rem;
+        color: v.$brown;
+        font-weight: 400;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background-color: v.$blue;
+        color: v.$white;
+        box-shadow: 0px 4px 8px rgba(31, 34, 80, 0.4);
+    }
+}

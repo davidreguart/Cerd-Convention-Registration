@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sobre-convencion {
+    @include m.contenedor;
+
+    @include m.tablet {
+        @include m.grid(2);
+    }
+}
+
+.contenido-convencion {
+    margin-top: 1rem;
+
+    h2 {
+        margin-bottom: 2rem;
+        font-weight: 700;
+    }
+
+    .fecha {
+        color: v.$brown;
+        font-weight: 600;
+        font-size: medium;
+    }
+
+    p {
+        font-size: medium;
+    }
+}
